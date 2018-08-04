@@ -10,12 +10,17 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
         
         ScoreKeeper *testScore = [[ScoreKeeper alloc] init];
+        
+        QuestionManager *testManager = [[QuestionManager alloc] init];
+        
+        
 
         while (gameOn == YES)
         {
@@ -40,6 +45,7 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"Wrong!");
                 [testScore scoreKeeper:0 :1];
             }
+            
             //creating a pointer to object           class               property
             //NSCharacterSet *whiteSpaceAndNewLine = NSCharacterSet.whitespaceAndNewlineCharacterSet;
             //          new string returned         receiver            method                         parameter

@@ -15,7 +15,7 @@
     char inputChars[255];
     
 //    NSLog(@"%@", prompt);
-    printf([prompt UTF8String]);
+    printf("%s", [prompt UTF8String]);
     fgets(inputChars, 255, stdin);
     NSString *inputwithEnter = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
     NSString *finalInputString = [inputwithEnter stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];

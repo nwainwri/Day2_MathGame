@@ -15,11 +15,7 @@
 
 @property (nonatomic, assign) NSDate* startTime;
 @property (nonatomic, assign) NSDate* endTime;
-@property (nonatomic, assign) NSDate* totalTime;
 
-
-
-- (instancetype)init;
 
 - (NSTimeInterval)answerTime;
 

@@ -17,6 +17,8 @@
         _startTime = [NSDate date];
         _question = [NSString stringWithFormat:@"What is the sum of %li and %li?", (long)firstNumber, (long)secondNumber];
         _answer = firstNumber + secondNumber;
+        
+        
     }
     return self;
 }
@@ -28,8 +30,7 @@
 }
 
 - (NSTimeInterval)answerTime{
-    double total = [self.startTime timeIntervalSinceDate:self.endTime];
-    return total;
+    return [self.endTime timeIntervalSinceDate:self.startTime];
 }
 
 @end

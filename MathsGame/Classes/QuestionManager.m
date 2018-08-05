@@ -10,4 +10,21 @@
 
 @implementation QuestionManager
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _questionsArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (NSString *)timeOutput{
+
+    NSString* output = (@"Time");
+    return output;
+}
+
+
 @end

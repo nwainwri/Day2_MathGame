@@ -25,7 +25,12 @@ int main(int argc, const char * argv[]) {
         while (gameOn == YES)
         {
             AdditionQuestion *addition = [[AdditionQuestion alloc] init];
+            
+            //[testManager.questionsArray addObject:addition];
+            
             NSLog (@"%@", addition.question);
+            
+            
             
             InputHandler *inputHandler = [[InputHandler alloc] init];
             
@@ -38,11 +43,14 @@ int main(int argc, const char * argv[]) {
                 continue; //jumps the loop back to the "start"
             }
             if (userAnswer == addition.answer) {
+                [testManager timeOutput];
                 NSLog(@"Right!");
                 [testScore scoreKeeper:1 :0];
             }
             if (userAnswer != addition.answer) {
                 NSLog(@"Wrong!");
+                [testManager timeOutput];
+                //NSLog(@"Wrong! %f", [addition answerTime]); crashes program after two right or wrong answers... can't print time???
                 [testScore scoreKeeper:0 :1];
             }
             

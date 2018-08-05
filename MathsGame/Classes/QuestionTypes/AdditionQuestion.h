@@ -1,5 +1,5 @@
 //
-//  QuestionManager.h
+//  AdditionQuestion.h
 //  MathsGame
 //
 //  Created by Nathan Wainwright on 2018-08-04.
@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface QuestionManager : NSObject
-
-@property NSMutableArray* questionsArray;
-
-
--(NSString *)timeOutput;
-
+@interface AdditionQuestion : NSObject
 
 @end

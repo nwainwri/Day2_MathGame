@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
@@ -15,27 +15,17 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
-        
         ScoreKeeper *testScore = [[ScoreKeeper alloc] init];
-        
         QuestionManager *testManager = [[QuestionManager alloc] init];
+        InputHandler *inputHandler = [[InputHandler alloc] init];
         
-        
-
         while (gameOn == YES)
         {
-            AdditionQuestion *addition = [[AdditionQuestion alloc] init];
+            Question *addition = [[Question alloc] init];
+            [testManager.questionsArray addObject:addition];
             
-            //[testManager.questionsArray addObject:addition];
-            
-            NSLog (@"%@", addition.question);
-            
-            
-            
-            InputHandler *inputHandler = [[InputHandler alloc] init];
-            
+            NSLog (@"%@", addition.question);            
             NSString *userAnswerString = [inputHandler userInputForPrompt:@"Please enter the answer (or type QUIT to exit):"];
-            
             NSInteger userAnswer = [userAnswerString intValue];
             
             if ([userAnswerString isEqualToString:@"QUIT"]) {
@@ -50,9 +40,14 @@ int main(int argc, const char * argv[]) {
             if (userAnswer != addition.answer) {
                 NSLog(@"Wrong!");
                 [testManager timeOutput];
-                //NSLog(@"Wrong! %f", [addition answerTime]); crashes program after two right or wrong answers... can't print time???
                 [testScore scoreKeeper:0 :1];
             }
+            
+            NSLog(@"TOTAL QUESTIONS DONE: %lu", (unsigned long)[testManager.questionsArray count]);
+            
+            NSLog(@"%@", [testManager timeOutput]);
+            
+            
             
             //creating a pointer to object           class               property
             //NSCharacterSet *whiteSpaceAndNewLine = NSCharacterSet.whitespaceAndNewlineCharacterSet;

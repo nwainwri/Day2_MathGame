@@ -7,6 +7,8 @@
 //
 
 #import "QuestionManager.h"
+#import "Question.h"
+
 
 @implementation QuestionManager
 
@@ -20,11 +22,21 @@
     return self;
 }
 
-- (NSString *)timeOutput{
+//- (NSString *)timeOutput{
+//    return [NSString stringWithFormat:@"TOTAL TIME: XXs, AVERAGE TIME: XXs"];
+//}
 
-    NSString* output = (@"Time");
-    return output;
+- (NSString *)timeOutput
+{
+    NSTimeInterval totalTime = 0;
+    for (int i=0; i< [self.questionsArray count]; i++) {
+        Question * question = [self.questionsArray objectAtIndex:i];
+        totalTime += [question answerTime];
+    }
+    NSTimeInterval averageTime = totalTime /[self.questionsArray count];
+    return [NSString stringWithFormat:@"total time: %fs, average time: %fs", totalTime, averageTime];
 }
+
 
 
 @end

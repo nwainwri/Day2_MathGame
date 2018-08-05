@@ -16,8 +16,8 @@
 @property NSDate* startTime;
 @property NSDate* endTime;
 
-@property NSInteger* rightValue;
-@property NSInteger* leftValue;
+@property NSInteger rightValue;
+@property NSInteger leftValue;
 
 
 

@@ -11,6 +11,7 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,13 +19,14 @@ int main(int argc, const char * argv[]) {
         ScoreKeeper *testScore = [[ScoreKeeper alloc] init];
         QuestionManager *testManager = [[QuestionManager alloc] init];
         InputHandler *inputHandler = [[InputHandler alloc] init];
+        QuestionFactory *testFactory = [[QuestionFactory alloc] init];
         
         while (gameOn == YES)
         {
-            Question *addition = [[Question alloc] init];
-            [testManager.questionsArray addObject:addition];
+            Question *question = [testFactory generateRandomQuestion];
+            [testManager.questionsArray addObject:question];
             
-            NSLog (@"%@", addition.question);            
+            NSLog (@"%@", [question question]);
             NSString *userAnswerString = [inputHandler userInputForPrompt:@"Please enter the answer (or type QUIT to exit):"];
             NSInteger userAnswer = [userAnswerString intValue];
             
@@ -32,18 +34,18 @@ int main(int argc, const char * argv[]) {
                 gameOn = NO;
                 continue; //jumps the loop back to the "start"
             }
-            if (userAnswer == addition.answer) {
+            if (userAnswer == [question answer]) {
                 [testManager timeOutput];
                 NSLog(@"Right!");
                 [testScore scoreKeeper:1 :0];
             }
-            if (userAnswer != addition.answer) {
+            if (userAnswer != [question answer]) {
                 NSLog(@"Wrong!");
                 [testManager timeOutput];
                 [testScore scoreKeeper:0 :1];
             }
             
-            NSLog(@"TOTAL QUESTIONS DONE: %lu", (unsigned long)[testManager.questionsArray count]);
+            NSLog(@"TOTAL QUESTIONS DONE: %lu", [testManager.questionsArray count]);
             
             NSLog(@"%@", [testManager timeOutput]);
             

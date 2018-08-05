@@ -7,7 +7,7 @@
 //
 
 #import "SubtractionQuestion.h"
-#import "Question.h"
+
 
 @implementation SubtractionQuestion
 - (instancetype)init {
@@ -20,5 +20,8 @@
 - (void)generateQuestion {
     // set super.answer here
     // set super.question here
+    super.question = [NSString stringWithFormat:@"What is the difference of %lu subtract %lu ?", super.leftValue, super.rightValue];
+    super.answer = super.leftValue - super.rightValue;
+    
 }
 @end

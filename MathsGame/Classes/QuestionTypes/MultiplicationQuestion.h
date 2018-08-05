@@ -6,8 +6,8 @@
 //  Copyright © 2018 Jamie. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Question.h"
 
-@interface MultiplicationQuestion : NSObject
+@interface MultiplicationQuestion : Question
 
 @end

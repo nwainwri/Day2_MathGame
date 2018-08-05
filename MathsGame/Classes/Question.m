@@ -12,14 +12,14 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        NSInteger firstNumber = arc4random_uniform(90) + 10;
-        NSInteger secondNumber = arc4random_uniform(90) + 10;
-        _leftValue = 0;
-        _rightValue = 0;
+//        NSInteger firstNumber = arc4random_uniform(90) + 10;
+//        NSInteger secondNumber = arc4random_uniform(90) + 10;
+        _leftValue = arc4random_uniform(90) + 10;
+        _rightValue = arc4random_uniform(90) + 10;
         _startTime = [NSDate date];
         _endTime = [[NSDate alloc] init];
-        _question = [NSString stringWithFormat:@"What is the sum of %li and %li?", (long)firstNumber, (long)secondNumber];
-        _answer = firstNumber + secondNumber;
+//        _question = [NSString stringWithFormat:@"What is the sum of %li and %li?", (long)_leftValue, (long)_rightValue];
+//        _answer = _leftValue + _rightValue;
         
         
     }

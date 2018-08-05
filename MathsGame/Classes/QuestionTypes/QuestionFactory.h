@@ -1,13 +1,16 @@
 //
-//  DivisionQuestion.h
+//  QuestionFactory.h
 //  MathsGame
 //
 //  Created by Nathan Wainwright on 2018-08-04.
 //  Copyright © 2018 Jamie. All rights reserved.
 //
 
-#import "Question.h"
+#import <Foundation/Foundation.h>
 
-@interface DivisionQuestion : Question
+@interface QuestionFactory : NSObject
+
+-(id)generateRandomQuestion;
+
 
 @end

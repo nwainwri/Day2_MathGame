@@ -16,6 +16,7 @@
 		F19F03632116A60C001E7617 /* SubtractionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = F19F03622116A60C001E7617 /* SubtractionQuestion.m */; };
 		F19F03692116A620001E7617 /* DivisionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = F19F03682116A620001E7617 /* DivisionQuestion.m */; };
 		F19F036C2116A62D001E7617 /* MultiplicationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = F19F036B2116A62D001E7617 /* MultiplicationQuestion.m */; };
+		F19F036F2116AAAD001E7617 /* QuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F19F036E2116AAAD001E7617 /* QuestionFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		F19F03682116A620001E7617 /* DivisionQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DivisionQuestion.m; sourceTree = "<group>"; };
 		F19F036A2116A62D001E7617 /* MultiplicationQuestion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiplicationQuestion.h; sourceTree = "<group>"; };
 		F19F036B2116A62D001E7617 /* MultiplicationQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiplicationQuestion.m; sourceTree = "<group>"; };
+		F19F036D2116AAAD001E7617 /* QuestionFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionFactory.h; sourceTree = "<group>"; };
+		F19F036E2116AAAD001E7617 /* QuestionFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 		F19F035D2116A5F0001E7617 /* QuestionTypes */ = {
 			isa = PBXGroup;
 			children = (
+				F19F036D2116AAAD001E7617 /* QuestionFactory.h */,
+				F19F036E2116AAAD001E7617 /* QuestionFactory.m */,
 				F19F03612116A60C001E7617 /* SubtractionQuestion.h */,
 				F19F03622116A60C001E7617 /* SubtractionQuestion.m */,
 				F19F035E2116A604001E7617 /* AdditionQuestion.h */,
@@ -183,6 +188,7 @@
 				F19F03692116A620001E7617 /* DivisionQuestion.m in Sources */,
 				F19F036C2116A62D001E7617 /* MultiplicationQuestion.m in Sources */,
 				F13DE1B9211132F800C9CEE9 /* InputHandler.m in Sources */,
+				F19F036F2116AAAD001E7617 /* QuestionFactory.m in Sources */,
 				7D6C7F612111131400B46782 /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
